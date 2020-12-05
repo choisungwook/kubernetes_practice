@@ -6,6 +6,23 @@ provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config-2
+  namespace: default
+data:
+  launch.sh: |
+    #!/bin/bash
+
+    PASSWORD=$(cat /etc/redis-passwd/passwd)
+
+    if [[ "${HOSTNAME}" == "redis-0" ]]; then
+      redis-server --requirepass ${PASSWORD}
+    else
+      redis-server --slaveof redis-0.redis 6379 --masterauth ${PASSWORD} --requirepass ${PASSWORD}
+    fi
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: redis
