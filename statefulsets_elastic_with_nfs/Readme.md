@@ -39,7 +39,7 @@ nfsip: "192.168.219.199"
 mountvolume: "/mnt/nfs"
 ```
 
-## helm3로 nfs 리소스 
+## 3.3 helm3로 nfs 리소스 
 ```sh
 helm install nfs --genereate-name
 ```
@@ -49,7 +49,9 @@ helm install nfs --genereate-name
 * nfs storageclass: storageClassname:[nfs]
 ```
 예:
-helm install elasticsearch elastic/elasticsearch --set volumeClaimTemplate.resources.requests.storage=3Gi --set volumeClaimTemplate.storageClassName=nfs
+helm install elasticsearch elastic/elasticsearch \
+--set volumeClaimTemplate.resources.requests.storage=3Gi \
+--set volumeClaimTemplate.storageClassName=nfs
 ```
 
 # 참고자료
