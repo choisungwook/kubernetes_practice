@@ -28,6 +28,10 @@ sudo systemctl start nfs-server
 ```
 
 # 3. 쿠버네티스<->nfs서버 연동
+* helm3
+```sh
+helm install nfs --genereate-name
+```
 
 
 # 참고자료
