@@ -1,4 +1,4 @@
-namespace: "nfs"
+namespace: "default"
 nfsname: "nfs"
 nfsip: "192.168.219.199"
 mountvolume: "/mnt/nfs"
