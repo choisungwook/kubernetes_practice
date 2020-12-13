@@ -28,15 +28,29 @@ sudo systemctl start nfs-server
 ```
 
 # 3. 쿠버네티스<->nfs서버 연동
-* 각 워커노드 nfs-client설치
+## 3.1 각 워커노드 nfs-client설치
 ```sh
 sudo apt-get install nfs-common
 ```
-* helm3
+## 3.2 설정
+* value.xml에서 nfs서버 IP와 nfs 마운트 불륨 설정
+```
+nfsip: "192.168.219.199"
+mountvolume: "/mnt/nfs"
+```
+
+## helm3로 nfs 리소스 
 ```sh
 helm install nfs --genereate-name
 ```
 
+# 4. helm 엘라스틱서치 설치
+* 엘라스틱서치 메모리: requets.storage:[X]Gi
+* nfs storageclass: storageClassname:[nfs]
+```
+예:
+helm install elasticsearch elastic/elasticsearch --set volumeClaimTemplate.resources.requests.storage=3Gi --set volumeClaimTemplate.storageClassName=nfs
+```
 
 # 참고자료
 * [1] git: https://github.com/justmeandopensource/kubernetes/tree/master/yamls/nfs-provisioner
