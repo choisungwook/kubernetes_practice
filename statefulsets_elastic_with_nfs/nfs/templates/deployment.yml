@@ -24,7 +24,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: {{ .Values.provisioner}}  
+              value: {{ .Values.provisionername }}  
             - name: NFS_SERVER
               value: {{ .Values.nfsip }}
             - name: NFS_PATH
