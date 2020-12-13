@@ -1,0 +1,4 @@
+namespace: "nfs"
+nfsname: "nfs"
+nfsip: "192.168.10.10"
+mountvolume: "/mnt/nfs"
