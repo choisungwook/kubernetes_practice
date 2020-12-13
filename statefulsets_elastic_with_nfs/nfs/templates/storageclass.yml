@@ -2,7 +2,7 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: {{ .Values.nfsname }}
-provisioner: nfs
+provisioner: {{ .Values.provisioner}}  
 parameters:
   archiveOnDelete: "false"
 volumeBindingMode: WaitForFirstConsumer
