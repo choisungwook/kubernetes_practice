@@ -28,6 +28,10 @@ sudo systemctl start nfs-server
 ```
 
 # 3. 쿠버네티스<->nfs서버 연동
+* 각 워커노드 nfs-client설치
+```sh
+sudo apt-get install nfs-common
+```
 * helm3
 ```sh
 helm install nfs --genereate-name
