@@ -57,3 +57,4 @@ helm install elasticsearch elastic/elasticsearch \
 # 참고자료
 * [1] git: https://github.com/justmeandopensource/kubernetes/tree/master/yamls/nfs-provisioner
 * [2] 영상: https://youtu.be/3GPpm2nZb2s
+* [3] 공식 https://github.com/elastic/helm-charts/tree/master/elasticsearch
