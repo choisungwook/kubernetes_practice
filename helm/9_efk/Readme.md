@@ -30,6 +30,23 @@ replicas: 2
 
 <br>
 
+# default user, password
+* elastic
+  * username: elasitc
+  * password: changeme
+
+<br>
+
+# TroubleShooting
+* fluentbit과 elasitcsearch연동 오류
+```
+[2020/12/25 08:44:40] [error] [output:es:es.0] HTTP status=400 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"illegal_argument_exception","reason":"Action/metadata line [1] contains an unknown parameter [_type]"}],"type":"illegal_argument_exception","reason":"Action/metadata line [1] contains an unknown parameter [_type]"},"status":400}
+```
+
 # 참고자료
 * [1] elasitcsearch, kibana 공식 helm chart: https://github.com/elastic/helm-charts
 * [2] fluent-bit 공식 helm chart: https://github.com/fluent/helm-charts.git
+* [3] fluent-bit<->kubernetes fliter: https://docs.fluentbit.io/manual/pipeline/filters/kubernetes
+* [4] pod에서 API접근: https://kubernetes.io/ko/docs/tasks/access-application-cluster/access-cluster/
+* [4] fluent-bit elasticsearch 플러그인: https://docs.fluentbit.io/manual/pipeline/outputs/elasticsearch
