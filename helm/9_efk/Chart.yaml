@@ -1,0 +1,5 @@
+apiVersion: v2
+name: efk
+version: 0.1.0
+
+description: elasticsearch, fluent-bit, kibana
