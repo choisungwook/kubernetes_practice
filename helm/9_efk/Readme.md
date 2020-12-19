@@ -38,7 +38,10 @@ replicas: 2
 <br>
 
 # TroubleShooting
-* fluentbit과 elasitcsearch연동 오류
+1. fluentbit과 elasitcsearch연동 오류
+* 원인: elasitcsearch버전 호환 X
+* 해결: elasitcsearch, kibana 버전 변경: 8.0 -> 7.x
+* 오류 로그
 ```
 [2020/12/25 08:44:40] [error] [output:es:es.0] HTTP status=400 URI=/_bulk, response:
 {"error":{"root_cause":[{"type":"illegal_argument_exception","reason":"Action/metadata line [1] contains an unknown parameter [_type]"}],"type":"illegal_argument_exception","reason":"Action/metadata line [1] contains an unknown parameter [_type]"},"status":400}
