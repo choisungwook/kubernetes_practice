@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: {{ template "pod.name" . }}
-  name: nginx
+  name: {{ template "pod.name" . }}
 spec:
   containers:
   - image: {{ .Values.image }}
