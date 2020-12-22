@@ -3,9 +3,9 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: {{ template "pod.name" }}
+    run: {{ template "pod.name" . }}
   name: nginx
 spec:
   containers:
-  - image: {{ template "pod.name" }}
+  - image: {{ template "pod.name" . }}
     name: {{ .Values.image }}
