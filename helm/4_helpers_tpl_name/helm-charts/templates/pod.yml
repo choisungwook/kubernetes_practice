@@ -7,5 +7,5 @@ metadata:
   name: nginx
 spec:
   containers:
-  - image: {{ template "pod.name" . }}
-    name: {{ .Values.image }}
+  - image: {{ .Values.image }}
+    name: {{ .Chart.Name }}
