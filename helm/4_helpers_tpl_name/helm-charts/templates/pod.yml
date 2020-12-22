@@ -1,8 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ template pod.name }}"
+  creationTimestamp: null
+  labels:
+    run: {{ template "pod.name" }}
+  name: nginx
 spec:
   containers:
-    - name: "{{ template pod.name }}"
-      image: "{{ .Values.image }}"
+  - image: {{ template "pod.name" }}
+    name: {{ .Values.image }}
