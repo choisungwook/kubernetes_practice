@@ -16,17 +16,17 @@ app name
 {{/*
 persistent volumes
 */}}
-{{- define "pv-data" -}}
+{{- define "pvdata" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "data" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}
 
-{{- define "pv-log" -}}
+{{- define "pvlog" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "log" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}
 
-{{- define "pv-config" -}}
+{{- define "pvconfig" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "config" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}
@@ -34,17 +34,17 @@ persistent volumes
 {{/*
 persistent volume claims
 */}}
-{{- define "pvc-data" -}}
+{{- define "pvcdata" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "data" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}
 
-{{- define "pvc-log" -}}
+{{- define "pvclog" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "log" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}
 
-{{- define "pvc-config" -}}
+{{- define "pvcconfig" -}}
 {{- $name := default .Chart.Name .Values.nameOverride }}
 {{- printf "%s-%s-%s" .Release.Name $name "config" | trunc 63 | trimSuffic "-" -}}
 {{- end -}}

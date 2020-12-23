@@ -28,10 +28,10 @@ metadata:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: {{ template pvc-data . }}
+          claimName: {{ template pvcdata . }}
       - name: log
         persistentVolumeClaim:
-          claimName: {{ template pvc-log . }}
+          claimName: {{ template pvclog . }}
       - name: config
         persistentVolumeClaim:
-          claimName: {{ template pvc-config . }}
+          claimName: {{ template pvcconfig . }}
