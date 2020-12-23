@@ -13,8 +13,9 @@ spec:
   claimRef:
     namespace: default
     name: {{ template "pvcdata" . }}
-  hostPath:
-    path: "/mnt/nfs/gitlab/data"
+  nfs:
+    path: /mnt/nfs/gitlab/data
+    server: {{ .Values.nfs.ip }}
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -31,8 +32,9 @@ spec:
   claimRef:
     namespace: default
     name: {{ template "pvclog" . }}
-  hostPath:
-    path: "/mnt/nfs/gitlab/log"
+  nfs:
+    path: /mnt/nfs/gitlab/log
+    server: {{ .Values.nfs.ip }}
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -49,5 +51,6 @@ spec:
   claimRef:
     namespace: default
     name: {{ template "pvcconfig" . }}
-  hostPath:
-    path: "/mnt/nfs/gitlab/config"
+  nfs:
+    path: /mnt/nfs/gitlab/config
+    server: {{ .Values.nfs.ip }}

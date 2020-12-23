@@ -9,3 +9,4 @@ nfs:
   datasize: "5Gi"
   logsize: "10Gi"
   configsize: "1Gi"
+  ip: "192.168.219.156"
