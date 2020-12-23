@@ -9,3 +9,10 @@ spec:
   containers:
   - image: busybox
     name: {{ template "fullname" . }}
+    volumeMounts:
+    - mountPath: /var/log
+      name: demo
+  volumes:
+  - name: demo
+    persistentVolumeClaim:
+      claimName: {{ template "pvname" . }}
