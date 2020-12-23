@@ -18,5 +18,5 @@ persistent volumes
 */}}
 {{- define "pvname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- printf "%s-%s-%s" .Release.Name $name "name" | trunc 63 | trimSuffic "-" -}}
+{{- printf "%s-%s-%s" .Release.Name $name "name" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
