@@ -1,3 +1,11 @@
 # gitlab image
+nameOverride: ""
+fullnameOverride: ""
 
 image: gitlab/gitlab-ce
+
+nfs:
+  name: nfs
+  datasize: 5Gi
+  logsize: 5Gi
+  configsize: 1Gi
