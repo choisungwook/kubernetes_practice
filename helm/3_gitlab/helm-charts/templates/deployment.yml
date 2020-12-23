@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template name . }}
+  name: {{ template "name" . }}
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template fullname . }}
+      app: {{ template "fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ template fullname . }}
+        app: {{ template "fullname" . }}
     spec:
       containers:
-      - name: {{ template fullname . }}
+      - name: {{ template "fullname" . }}
         image: {{ .Values.image }}
         ports:
         - containerPort: 80
@@ -28,10 +28,10 @@ metadata:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: {{ template pvcdata . }}
+          claimName: {{ template "pvcdata" . }}
       - name: log
         persistentVolumeClaim:
-          claimName: {{ template pvclog . }}
+          claimName: {{ template "pvclog" . }}
       - name: config
         persistentVolumeClaim:
-          claimName: {{ template pvcconfig . }}
+          claimName: {{ template "pvcconfig" . }}

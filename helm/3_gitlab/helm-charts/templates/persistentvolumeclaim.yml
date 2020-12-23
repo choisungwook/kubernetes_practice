@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ template pvcdata . }}
+  name: {{ template "pvcdata" . }}
 spec:
   storageClassName: {{ .Values.nfs.name }}
   accessModes:
@@ -13,7 +13,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ template pvclog . }}
+  name: {{ template "pvclog" . }}
 spec:
   storageClassName: {{ .Values.nfs.name }}
   accessModes:
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ template pvcconfig . }}
+  name: {{ template "pvcconfig" . }}
 spec:
   storageClassName: {{ .Values.nfs.name }}
   accessModes:
