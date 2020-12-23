@@ -15,6 +15,7 @@ spec:
     name: {{ template "pvcdata" . }}
   nfs:
     path: /mnt/nfs/gitlab/data
+    type: DirectoryOrCreate
     server: {{ .Values.nfs.ip }}
 ---
 apiVersion: v1
@@ -34,6 +35,7 @@ spec:
     name: {{ template "pvclog" . }}
   nfs:
     path: /mnt/nfs/gitlab/log
+    type: DirectoryOrCreate
     server: {{ .Values.nfs.ip }}
 ---
 apiVersion: v1
@@ -53,4 +55,5 @@ spec:
     name: {{ template "pvcconfig" . }}
   nfs:
     path: /mnt/nfs/gitlab/config
+    type: DirectoryOrCreate
     server: {{ .Values.nfs.ip }}
