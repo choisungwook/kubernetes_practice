@@ -1,0 +1,7 @@
+# gitlab image
+nameOverride: ""
+fullnameOverride: ""
+
+nfs:
+  name: nfs
+  size: 1Gi
