@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ template "fullname" . }}
-        image: {{ .Values.image }}
+        image: {{ .Values.gitlabimage }}
         ports:
         - containerPort: 80
         - containerPort: 443

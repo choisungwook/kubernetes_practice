@@ -2,7 +2,7 @@
 nameOverride: ""
 fullnameOverride: ""
 
-image: "gitlab/gitlab-ce"
+gitlabimage: "gitlab/gitlab-ce"
 
 nfs:
   name: "nfs"
