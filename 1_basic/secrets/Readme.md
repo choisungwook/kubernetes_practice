@@ -51,6 +51,11 @@ containers:
         key: mysql-password
 ```
 
-# 5. 참고자료
+# 5. 실행 방법
+```sh
+$ cd resources
+$ kubectl apply -f .
+```
+# 6. 참고자료
 * [1] 공식문서 secret: https://kubernetes.io/docs/concepts/configuration/secret/
 * [2] mysql 공식 docker hub: https://hub.docker.com/_/mysql
