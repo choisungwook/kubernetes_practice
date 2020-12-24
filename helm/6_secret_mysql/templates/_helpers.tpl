@@ -13,10 +13,11 @@ Return database name
 Return root password
 */}}
 {{- define "root.password" -}}
-{{- if .Values.rootpassword }}
+{{- if .Values.rootpassword -}}
   {{- .Values.rootpassword -}}
 {{- else -}}
   {{- randAlphaNum 10 -}}
+{{- end -}}
 {{- end -}}
 
 {{/*
@@ -30,8 +31,9 @@ Return MYSQL_USER
 Return MYSQL_PASSWORD
 */}}
 {{- define "user.password" -}}
-{{- if .Values.user.password }}
+{{- if .Values.user.password -}}
   {{- .Values.user.password -}}
 {{- else -}}
   {{- randAlphaNum 10 -}}
+{{- end -}}
 {{- end -}}
