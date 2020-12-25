@@ -3,6 +3,7 @@ apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
   name: {{ include "fluent-bit.fullname" . }}
+  namespace: {{ template "namespace" . }}
 spec:
   privileged: false
   # Required to prevent escalations to root.

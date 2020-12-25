@@ -4,6 +4,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: {{ $fullName | quote }}
+  namespace:  {{ template "namespace" . }}
   labels:
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
@@ -16,7 +17,7 @@ subjects:
     {{- else }}
     name: {{ .Values.rbac.serviceAccountName | quote }}
     {{- end }}
-    namespace: {{ .Release.Namespace | quote }}
+    namespace:  {{ template "namespace" . }}
 roleRef:
   kind: Role
   name: {{ $fullName | quote }}

@@ -7,6 +7,24 @@ Expand the name of the chart.
 {{- end -}}
 
 {{/*
+namespace
+*/}}
+{{- define "namespace" -}}
+{{- default "default" "logging" -}}
+{{- end -}}
+
+{{/*
+elasticsearchHosts
+*/}}
+{{- define "elasticsearchHosts" -}}
+{{- if .Values.global.namespace -}}
+  {{ printf "%s.%s.svc:9200" "http://elasticsearch-master" .Values.global.namespace }}
+{{- else -}}
+  {{ "http://elasticsearch-master:9200" }}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}

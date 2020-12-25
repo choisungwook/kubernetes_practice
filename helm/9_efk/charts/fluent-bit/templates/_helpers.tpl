@@ -32,6 +32,13 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
+namespace
+*/}}
+{{- define "namespace" -}}
+{{- default "default" "logging" -}}
+{{- end -}}
+
+{{/*
 Common labels
 */}}
 {{- define "fluent-bit.labels" -}}

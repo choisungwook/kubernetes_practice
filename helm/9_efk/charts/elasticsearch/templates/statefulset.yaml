@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ template "elasticsearch.uname" . }}
+  namespace: {{ template "namespace" . }}
   labels:
     heritage: {{ .Release.Service | quote }}
     release: {{ .Release.Name | quote }}
@@ -26,6 +27,7 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: {{ template "elasticsearch.uname" . }}
+      namespace:  {{ template "namespace" . }}
     {{- if .Values.persistence.labels.enabled }}
       labels:
         release: {{ .Release.Name | quote }}

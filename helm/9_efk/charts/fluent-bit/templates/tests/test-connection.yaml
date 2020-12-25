@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: "{{ include "fluent-bit.fullname" . }}-test-connection"
+  namespace: {{ template "namespace" . }}
   labels:
     {{- include "fluent-bit.labels" . | nindent 4 }}
   annotations:
@@ -11,5 +12,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "fluent-bit.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "fluent-bit.fullname" . }}.{{ template "namespace" . }}.svc:{{ .Values.service.port }}']
   restartPolicy: Never

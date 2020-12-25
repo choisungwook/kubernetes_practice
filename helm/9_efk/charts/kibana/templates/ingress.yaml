@@ -6,6 +6,7 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
+  namespace: {{ template "namespace" . }}
   labels: {{ include "kibana.labels" . | nindent 4 }}
 {{- with .Values.ingress.annotations }}
   annotations:

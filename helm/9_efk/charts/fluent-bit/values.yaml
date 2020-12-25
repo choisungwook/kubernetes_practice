@@ -154,18 +154,18 @@ config:
         K8S-Logging.Parser  On
         K8S-Logging.Exclude On
         Merge_Log           On
-
+    
     [FILTER]
         Name              grep
         Match             kube.*
-        Regex             log (hello|world|abcde)
+        Regex             log (hello|world)
 
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
         Name            es
         Match           *
-        Host            elasticsearch-master
+        Host            elasticsearch-master.logging.svc
         Port            9200
         HTTP_User elastic
         HTTP_Passwd changeme
