@@ -6,6 +6,8 @@
 
 ![](imgs/gitlab_구조.png)
 
+<br> 아키텍처
+
 <br>
 
 # 실행방법
@@ -25,6 +27,17 @@ helm install gitlab ./helm-charts
 
 <br> 설치결과
 
+<br>
+
+# todo list
+* [ ] gitlab-cli
+* [ ] gitlab-runner
+* [ ] redis 연동
+* [ ] postgresql 연동
+* [ ] argocd 연동
+* [ ] https
+
+<br>
 
 # 참고자료
 * [1] 블로그: https://zunoxi.github.io/devops/2020/07/19/devops-k8s-Gitlab/
