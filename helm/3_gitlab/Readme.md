@@ -5,8 +5,7 @@
 <br>
 
 ![](imgs/gitlab_구조.png)
-
-<br> 아키텍처
+아키텍처
 
 <br>
 
@@ -24,8 +23,7 @@ helm install gitlab ./helm-charts
 <br>
 
 ![](imgs/설치결과.png)
-
-<br> 설치결과
+설치결과
 
 <br>
 
