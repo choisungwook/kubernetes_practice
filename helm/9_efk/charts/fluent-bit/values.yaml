@@ -155,10 +155,10 @@ config:
         K8S-Logging.Exclude On
         Merge_Log           On
     
-    [FILTER]
-        Name              grep
-        Match             kube.*
-        Regex             log (hello|world)
+  ## [FILTER]
+  #     Name              grep
+  #     Match             kube.*
+  #     Regex             log (hello|world)
 
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |

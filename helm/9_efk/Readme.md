@@ -3,6 +3,22 @@
 
 <br>
 
+# 설정
+* namespcae 생성
+```
+kubectl create ns logging
+```
+* namespace 수정시 values.yaml namespace수정과 charts/fluent-bit/values.yaml output.host 변경
+```yaml
+; 기본설정 
+[OUTPUT]
+    Name            es
+    Match           *
+    Host            elasticsearch-master.logging.svc
+```
+
+<br>
+
 # 실행방법
 1. storageclass 설정 -> charts/elasticsearch/value.yaml
 * storageClassname이름 변경
