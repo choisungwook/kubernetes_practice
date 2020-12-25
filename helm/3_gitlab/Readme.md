@@ -1,4 +1,4 @@
-# 개요
+# 1. 개요
 * helm gitlab 설치
 * gitlab 구조
 
@@ -9,7 +9,7 @@
 
 <br>
 
-# 실행방법
+# 2. 실행방법
 1. namespace 생성(기본: gitlab)
 ```
 kubectl create ns gitlab
@@ -27,7 +27,7 @@ helm install gitlab ./helm-charts
 
 <br>
 
-# todo list
+# 3. todo list
 * [ ] gitlab-cli
 * [ ] gitlab-runner
 * [ ] redis 연동
@@ -37,7 +37,7 @@ helm install gitlab ./helm-charts
 
 <br>
 
-# 참고자료
+# 4. 참고자료
 * [1] 블로그: https://zunoxi.github.io/devops/2020/07/19/devops-k8s-Gitlab/
 * [2] gitlab-ce 도커 공식이미지: https://hub.docker.com/r/gitlab/gitlab-ce
 * [3] 블로그: https://blog.lwolf.org/post/fully-automated-gitlab-installation-on-kubernetes-including-runner-and-registry/
