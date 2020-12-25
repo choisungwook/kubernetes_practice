@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   claimRef:
-    namespace: default
+    namespace: {{ template "namespace" . }}
     name: {{ template "pvcdata" . }}
   nfs:
     path: /mnt/nfs/gitlab/data
@@ -30,7 +30,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   claimRef:
-    namespace: default
+    namespace: {{ template "namespace" . }}
     name: {{ template "pvclog" . }}
   nfs:
     path: /mnt/nfs/gitlab/log
@@ -49,7 +49,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   claimRef:
-    namespace: default
+    namespace: {{ template "namespace" . }}
     name: {{ template "pvcconfig" . }}
   nfs:
     path: /mnt/nfs/gitlab/config

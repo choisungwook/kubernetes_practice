@@ -6,6 +6,14 @@ chart name
 {{- end -}}
 
 {{/*
+define namespace
+default: gitlab
+*/}}
+{{- define "namespace" -}}
+{{- default "gitlab" .Values.namespace | trunc 63 | trimSuffix "-"  -}}
+{{- end -}}
+
+{{/*
 app name
 */}}
 {{- define "fullname" -}}
