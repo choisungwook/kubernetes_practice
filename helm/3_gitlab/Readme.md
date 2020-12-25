@@ -8,6 +8,23 @@
 
 <br>
 
+# 실행방법
+1. namespace 생성(기본: gitlab)
+```
+kubectl create ns gitlab
+```
+> gitlab이 아닌 namespace를 사용할 경우 values.yaml에서 namespace수정
+2. chart 설치
+```
+helm install gitlab ./helm-charts
+```
+
+<br>
+
+![](imgs/설치결과.png)
+
+<br> 설치결과
+
 
 # 참고자료
 * [1] 블로그: https://zunoxi.github.io/devops/2020/07/19/devops-k8s-Gitlab/
