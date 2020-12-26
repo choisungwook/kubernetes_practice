@@ -19,6 +19,16 @@ kubectl create ns gitlab
 ```
 helm install gitlab ./helm-charts
 ```
+3. external_url 설정
+* nfs/gitlab/config/gitlab.rb 32번째 줄 수정
+```
+external_url 'http://gitlab-gitlab.gitlab.svc'
+```
+* gitlab 터널 접속 후 변경된 gitlab.rb설정 적용
+```sh
+kubectl exec --stdin --tty [pod 이름] -- /bin/bash
+gitlab-ctl reconfigure
+```
 
 <br>
 
@@ -34,6 +44,7 @@ helm install gitlab ./helm-charts
 * [ ] postgresql 연동
 * [ ] argocd 연동
 * [ ] https
+* [x] external_url
 
 <br>
 
@@ -43,3 +54,5 @@ helm install gitlab ./helm-charts
 * [3] 블로그: https://blog.lwolf.org/post/fully-automated-gitlab-installation-on-kubernetes-including-runner-and-registry/
 * [4] gitlab 커스텀 github: https://github.com/lwolf/gitlab-chart.git
 * [5] gitlab helm 공식문서: https://gitlab.com/charts/charts.gitlab.io
+* [6] 블로그-gitlabrb mount: https://www.ylcnky.com/blogs/dev-ops-infrastructure-with-k3s-and-gitlab-a-simple-yet-powerful-pair
+* [7] 공식문서-gitlab external_url 설명: https://docs.gitlab.com/omnibus/settings/configuration.html
