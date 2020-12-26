@@ -1,7 +1,7 @@
 # gitlab image
 nameOverride: ""
 fullnameOverride: ""
-namespace: ""
+namespace: "gitlab"
 
 gitlabimage: "gitlab/gitlab-ce"
 
