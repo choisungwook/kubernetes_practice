@@ -56,3 +56,4 @@ gitlab-ctl reconfigure
 * [5] gitlab helm 공식문서: https://gitlab.com/charts/charts.gitlab.io
 * [6] 블로그-gitlabrb mount: https://www.ylcnky.com/blogs/dev-ops-infrastructure-with-k3s-and-gitlab-a-simple-yet-powerful-pair
 * [7] 공식문서-gitlab external_url 설명: https://docs.gitlab.com/omnibus/settings/configuration.html
+* [8] IBM-gitlab 문서: https://github.com/IBM/Kubernetes-container-service-GitLab-sample
