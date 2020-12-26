@@ -1,1 +1,1 @@
-이 helm은 jenkins helm https://github.com/jenkinsci/helm-charts에서 가져왔습니다.
+이 helm은 jenkins helm https://github.com/jenkinsci/helm-charts 에서 가져왔습니다.
