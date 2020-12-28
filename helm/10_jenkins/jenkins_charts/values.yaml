@@ -504,7 +504,7 @@ agent:
   # Allowed types are: ConfigMap, EmptyDir, HostPath, Nfs, PVC, Secret
   # Configure the attributes as they appear in the corresponding Java class for that type
   # https://github.com/jenkinsci/kubernetes-plugin/tree/master/src/main/java/org/csanchez/jenkins/plugins/kubernetes/volumes
-  volumes: []
+  volumes: 
   # - type: ConfigMap
   #   configMapName: myconfigmap
   #   mountPath: /var/myapp/myconfigmap
@@ -514,11 +514,11 @@ agent:
   # - type: HostPath
   #   hostPath: /var/lib/containers
   #   mountPath: /var/myapp/myhostpath
-  # - type: Nfs
-  #   mountPath: /var/myapp/mynfs
-  #   readOnly: false
-  #   serverAddress: "192.0.2.0"
-  #   serverPath: /var/lib/containers
+  - type: Nfs
+    mountPath: /var/myapp/mynfs
+    readOnly: false
+    serverAddress: "192.168.219.156"
+    serverPath: /mnt/nfs/jenkins
   # - type: PVC
   #   claimName: mypvc
   #   mountPath: /var/myapp/mypvc
@@ -645,7 +645,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass:
+  storageClass: nfs
   annotations: {}
   accessMode: "ReadWriteOnce"
   size: "8Gi"

@@ -9,6 +9,15 @@
 ; jenkins_charts/values.yaml
 648 storageClass: [이름]
 ```
+* nfs서버 설정
+```yaml
+507 volumes: 
+    - type: Nfs
+      mountPath: /var/myapp/mynfs
+      readOnly: false
+      serverAddress: "192.168.219.156"
+      serverPath: /mnt/nfs/jenkins
+```
 
 <br>
 
