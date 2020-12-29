@@ -22,8 +22,13 @@
 <br>
 
 # 실행방법
+* 실행
 ```sh
 helm install [차트이름] jenkins
+```
+* pasword 출력
+```
+kubectl exec --namespace default -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo
 ```
 
 <br>
