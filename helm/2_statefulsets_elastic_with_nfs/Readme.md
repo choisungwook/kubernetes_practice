@@ -3,6 +3,9 @@ nfs설치와 쿠버네티스 연동
 
 # 2. nfs 설치
 > 우분투에서 진행
+```
+apt-get install nfs-common nfs-kernel-server
+```
 
 * 공유 디렉터리 생성
 ```
