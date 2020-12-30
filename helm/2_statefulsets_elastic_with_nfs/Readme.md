@@ -7,8 +7,8 @@ nfs설치와 쿠버네티스 연동
 * 공유 디렉터리 생성
 ```
 sudo mkdir -p /mnt/nfs
-sudo chown 777 /mnt/nfs
-sudo chmod nobody:nogroup /mnt/nfs
+sudo chmod 777 /mnt/nfs
+sudo chown nobody:nogroup /mnt/nfs
 ```
 
 * nfs 설정 (설정파일: /etc/exports)
