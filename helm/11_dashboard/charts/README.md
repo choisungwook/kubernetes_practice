@@ -2,6 +2,8 @@
 * 쿠버네티스 helm chart
 * https://github.com/kubernetes/dashboard/tree/master/aio/deploy/helm-chart/kubernetes-dashboard 에서 가져왔습니다.
 
+<br>
+
 # 2. 수정
 ## 2.1 cluster-admin serviceaccount 생성과 clusterrole binding
 * serviceaccount-admin.yaml
@@ -12,6 +14,8 @@ metadata:
   name: admin-user
   namespace: {{ .Release.Namespace }}
 ```
+
+<br>
 
 * clusterrolebinding-admin
 ```yaml
@@ -39,13 +43,14 @@ subjects:
       - --token-ttl=0
 ```
 
+<br>
+
 # 3. 실행
 ## 3.1 인자 설명
 * -n: namespace
 * --create-namespace: namespace없을 때 자동 생성
 * --dependency-update: 디펜더시 자동 설치
 * --set=service.type=NodePort: 포트타입을 NodePort로 변경
-
 ```sh
 helm install dashboard -n dashboard --dependency-update --create-namespace --set=service.type=NodePort ./charts
 ```
