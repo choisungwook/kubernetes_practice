@@ -28,7 +28,7 @@ subjects:
   name: admin-user
   namespace: {{ .Release.Namespace }}
 ```
-## 2.2 토큰 인징시간 제거
+## 2.2 토큰 인증시간 제거
 * deployment.yaml
 ```yaml
   containers:
