@@ -62,3 +62,8 @@ export NODE_PORT=$(kubectl get -n dashboard -o jsonpath="{.spec.ports[0].nodePor
 export NODE_IP=$(kubectl get nodes -o jsonpath="{.items[0].status.addresses[0].address}")
 echo https://$NODE_IP:$NODE_PORT/
 ```
+
+## 3.3 접속토큰 출력
+```
+kubectl describe secret admin-user-token-xxxx -n dashboard
+```
