@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "12_nexus.fullname" . }}
+  labels:
+    {{- include "12_nexus.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "12_nexus.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "12_nexus.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "12_nexus.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: {{ .Values.nexus.imageName }}:{{ .Values.nexus.imageTag }}
+          imagePullPolicy: {{ .Values.nexus.imagePullPolicy }}
+          env:
+{{ toYaml .Values.nexus.env | indent 12 }}
+            - name: NEXUS_DATA_CHOWN
+              value: {{ .Values.nexus.chownNexusData | quote }}
+          ports:
+            - containerPort: {{ .Values.nexus.dockerPort }}
+              name: nexus-docker-g
+            - containerPort: {{ .Values.nexus.nexusPort }}
+              name: nexus-http
+          volumeMounts:
+            - mountPath: /nexus-data
+              name: {{ template "12_nexus.fullname" . }}-data            
+      volumes:        
+        - name: {{ template "12_nexus.fullname" . }}-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (printf "%s-%s" (include "12_nexus.fullname" .) "data") }}

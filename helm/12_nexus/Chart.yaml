@@ -1,0 +1,5 @@
+apiVersion: v2
+name: nexus
+description: A Helm chart for Nexus
+type: application
+version: 0.1.0
