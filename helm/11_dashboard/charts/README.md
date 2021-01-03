@@ -39,8 +39,8 @@ subjects:
       - --token-ttl=0
 ```
 
-# 실행
-## 인자 설명
+# 3. 실행
+## 3.1 인자 설명
 * -n: namespace
 * --create-namespace: namespace없을 때 자동 생성
 * --dependency-update: 디펜더시 자동 설치
@@ -50,7 +50,7 @@ subjects:
 helm install dashboard -n dashboard --dependency-update --create-namespace --set=service.type=NodePort ./charts
 ```
 
-# 대시보드 주소
+## 3.2 대시보드 주소
 * namespace가 dashabord인 경우만 동작
 ```sh
 export NODE_PORT=$(kubectl get -n dashboard -o jsonpath="{.spec.ports[0].nodePort}" services dashboard-kubernetes-dashboard)
