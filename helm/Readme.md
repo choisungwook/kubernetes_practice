@@ -1,4 +1,3 @@
-# 최종 결과 출력
-```
-helm template [chart 이름]
-```
+# 개요
+* 연습용 chart
+* 리팩토링 chart url: https://gitlab.com/choisungwook/mykubernetes.git
